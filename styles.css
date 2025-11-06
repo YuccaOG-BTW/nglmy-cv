@@ -1,0 +1,332 @@
+/* Базовий стиль для всіх тем */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background 0.5s, color 0.5s; /* Плавна зміна кольору при перемиканні теми */
+}
+
+html {
+    scroll-behavior: smooth; /* Плавна прокрутка при натисканні на меню */
+}
+
+/* Навігаційна панель */
+.navbar {
+    position: sticky; /* Завжди зверху при прокрутці */
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    background-color: #ffecb3; /* Світло-жовтий */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Тінь знизу */
+}
+
+.navbar ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.navbar li a {
+    color: #ff4081; /* Рожевий текст */
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar li a:hover {
+    background-color: #81d4fa; /* Блакитний фон при наведенні */
+    color: #ffffff;
+}
+
+/* Основні блоки: заголовок і секції */
+header, section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.95); /* Напівпрозорий білий */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* М’яка тінь */
+}
+
+/* Заголовки */
+h1, h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #ff4081; /* Рожевий */
+}
+
+/* Стилі для зображення профілю */
+img[alt*="Фото"] {
+    display: block;
+    margin: 10px auto;
+    border-radius: 50%;
+    border: 3px solid #81d4fa; /* Блакитна рамка */
+    box-shadow: 0 0 10px #ffcc80; /* Тінь */
+}
+
+/* Списки */
+ul {
+    list-style: square inside;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+li {
+    background-color: #fff9c4; /* Світло-жовтий */
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+li:hover {
+    transform: scale(1.05);
+    background-color: #ffe0b2; /* Жовто-оранжевий */
+}
+
+/* Посилання */
+a {
+    color: #ff4081; /* Рожевий */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #f50057; /* Насичений рожевий */
+}
+
+a[target="_blank"]:hover {
+    color: #ff80ab; /* Світло-рожевий */
+}
+
+/* Модальне вікно зворотного зв'язку */
+#feedback-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff3e0;
+    border: 2px solid #ffb74d;
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 1000;
+    box-shadow: 0 0 15px rgba(255, 167, 38, 0.5);
+    max-width: 400px;
+    width: 90%;
+}
+
+/* Стилізація елементів форми всередині модального вікна */
+#feedback-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#feedback-modal input,
+#feedback-modal textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+/* Кнопки форми */
+#feedback-modal button {
+    padding: 10px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Кнопка "Надіслати" — жовто-рожева */
+#feedback-modal button[type="submit"] {
+    background-color: #ff4081; /* Рожевий */
+}
+
+#feedback-modal button[type="submit"]:hover {
+    background-color: #f50057;
+    transform: scale(1.03);
+}
+
+/* Кнопка "Закрити" — сіра */
+#feedback-modal button[type="button"] {
+    background-color: #999;
+}
+
+#feedback-modal button[type="button"]:hover {
+    background-color: #666;
+    transform: scale(1.03);
+}
+
+
+/* Денна тема: жовто-рожево-блакитна */
+body.day-theme {
+    background: linear-gradient(to right, #fff9c4, #f8bbd0, #b3e5fc); /* Жовтий → рожевий → блакитний */
+    color: #333;
+}
+
+/* Стилі для денної теми */
+body.day-theme .navbar {
+    background-color: #fff176;
+}
+
+body.day-theme .navbar li a {
+    color: #d81b60;
+}
+
+body.day-theme .navbar li a:hover {
+    background-color: #4fc3f7;
+    color: #fff;
+}
+
+body.day-theme h1,
+body.day-theme h2 {
+    color: #d81b60;
+}
+
+body.day-theme img[alt*="Фото"] {
+    border: 3px solid #81d4fa;
+    box-shadow: 0 0 10px #ffd54f;
+}
+
+body.day-theme li {
+    background-color: #fff9c4;
+}
+
+body.day-theme li:hover {
+    background-color: #ffe082;
+}
+
+/* Нічна тема: темно-синя + чорний + фуксія */
+body.night-theme {
+    background: linear-gradient(to right, #0d0d2b, #000000); /* Темно-синій → чорний */
+    color: #f8bbff; /* Світло-фуксія */
+}
+
+body.night-theme .navbar {
+    background-color: #1a0033;
+    box-shadow: 0 2px 6px rgba(255, 0, 255, 0.3);
+}
+
+body.night-theme .navbar li a {
+    color: #ff80ff; /* Фуксія */
+}
+
+body.night-theme .navbar li a:hover {
+    background-color: #4a0072;
+    color: #fff;
+}
+
+body.night-theme header,
+body.night-theme section {
+    background-color: rgba(25, 0, 51, 0.85);
+    box-shadow: 0 4px 12px rgba(255, 0, 255, 0.2);
+}
+
+body.night-theme h1,
+body.night-theme h2 {
+    color: #ff80ff;
+}
+
+body.night-theme img[alt*="Фото"] {
+    border: 3px solid #ff4081;
+    box-shadow: 0 0 10px #d500f9;
+}
+
+body.night-theme li {
+    background-color: #2a0033;
+}
+
+body.night-theme li:hover {
+    background-color: #4a0066;
+}
+
+body.night-theme a {
+    color: #ffb3ff;
+}
+
+body.night-theme a:hover {
+    color: #ffccff;
+}
+
+/* Перемикач теми */
+.theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+}
+
+/* Сховаємо checkbox */
+.theme-toggle input[type="checkbox"] {
+    display: none;
+}
+
+/* Стилізація перемикача */
+.theme-toggle label {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Коло перемикача */
+.theme-toggle label::after {
+    content: '';
+    width: 26px;
+    height: 26px;
+    background: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* Коли темна тема активна */
+#themeSwitch:checked + label {
+    background-color: #d500f9;
+}
+
+#themeSwitch:checked + label::after {
+    transform: translateX(30px);
+}
+
+/* Адаптивність для мобільних */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    img[alt*="Фото"] {
+        width: 100px;
+        height: 100px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
